@@ -1,6 +1,6 @@
 %global ver 2.0.0
-%global commit 7c78122eea2cbc11d0b9c2a1a82958df45a27dbc
-%global commit_date 20260702
+%global commit 3c0b4027d69ffa8b7e8b1a365f349670e3cb689c
+%global commit_date 20260714
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           openbangla-keyboard-nightly

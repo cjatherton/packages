@@ -1,7 +1,7 @@
 %global mangowc_ver 0.12.5-1
 
 Name:           mangowm
-Version:        0.15.0
+Version:        0.15.2
 Release:        1%{?dist}
 Summary:        A modern, lightweight, high-performance Wayland compositor built on dwl
 License:        GPL-3.0-or-later AND MIT AND X11 AND CC0-1.0
@@ -22,6 +22,7 @@ BuildRequires:  pkgconfig(libinput)
 BuildRequires:  pkgconfig(wayland-client)
 BuildRequires:  pkgconfig(libpcre2-8)
 BuildRequires:  pkgconfig(libcjson)
+BuildRequires:  pkgconfig(pangocairo)
 BuildRequires:  scenefx-devel
 
 Conflicts:      mangowc < %{mangowc_ver}
@@ -45,11 +46,6 @@ dwl — crafted for speed, flexibility, and a customizable desktop experience.
 %files
 %doc README.md
 %license LICENSE
-%license LICENSE.wlroots
-%license LICENSE.tinywl 
-%license LICENSE.sway 
-%license LICENSE.dwm 
-%license LICENSE.dwl 
 %{_bindir}/mango
 %{_bindir}/mmsg
 %{_sysconfdir}/mango/config.conf

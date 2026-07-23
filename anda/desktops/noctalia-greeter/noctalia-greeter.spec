@@ -1,8 +1,8 @@
 %global ver 1.0.0
 
-%global commit          f46e83f6992c4bade22522f911a6f005e732ce80
+%global commit          c0a8f5389c1d942036eec939aba0d1f84ca4a43b
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
-%global commitdate      20260717
+%global commitdate      20260722
 
 Name:   	noctalia-greeter
 Version:	%{ver}^%{commitdate}git.%{shortcommit}
@@ -30,6 +30,9 @@ BuildRequires:  pkgconfig(pango)
 BuildRequires:  pkgconfig(wayland-client)
 BuildRequires:  pkgconfig(wayland-protocols)
 BuildRequires:  pkgconfig(xkbcommon)
+BuildRequires:  pkgconfig(tomlplusplus)
+BuildRequires:  pkgconfig(nlohmann_json)
+BuildRequires:  stb-devel
 BuildRequires:  polkit
 BuildRequires:  wlroots-devel >= 0.20
 
@@ -54,6 +57,8 @@ It lets you pick a user, enter your password, choose a Wayland session, and pick
 
 %install
 %meson_install
+# Delete the unneeded tmpfiles.d fallback configuration
+rm -f %{buildroot}%{_tmpfilesdir}/noctalia-greeter.conf
 install -d %{buildroot}%{_licensedir}/%{name}/third_party
 find third_party -type f \( -name "LICENSE*" -o -name "COPYING*" -o -name "NOTICE*" \) | while read -r file; do
     # Create the destination subdirectory

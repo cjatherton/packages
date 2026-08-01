@@ -1,8 +1,8 @@
-%global commit 80368cae31b7d55a1098865491040eae25154a52
+%global commit 99e0533a428ca50a98192d583b078a09ddfef8e7
 %global debug_package %{nil}
 %global modulename logitech-rs50-linux-driver
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global commitdate 20260722
+%global commitdate 20260731
 
 Name:           dkms-%{modulename}
 Version:        1.0^%{commitdate}git.%{shortcommit}
@@ -36,7 +36,7 @@ BuildArch:     noarch
 Akmods modules for the akmod-%{name} package.
 
 %prep
-%autosetup -p1 -n %{modulename}-%{commit}
+%autosetup -p1 -n logitech-trueforce-linux-driver-%{commit}
 pushd mainline
 mkdir build
 cp %{SOURCE1} ./dkms.conf
@@ -44,20 +44,20 @@ sed -i -e 's/__VERSION_STRING/%{version}/g' dkms.conf
 popd
 
 %install
-mkdir -p %{buildroot}%{_usrsrc}/%{modulename}-%{version}
-cp -fr ./mainline/* %{buildroot}%{_usrsrc}/%{modulename}-%{version}/
+mkdir -p %{buildroot}%{_usrsrc}/logitech-trueforce-linux-driver-%{version}
+cp -fr ./mainline/* %{buildroot}%{_usrsrc}/logitech-trueforce-linux-driver-%{version}/
 
 %post
-dkms add -m %{modulename} -v %{version} -q --rpm_safe_upgrade || :
+dkms add -m logitech-trueforce-linux-driver -v %{version} -q --rpm_safe_upgrade || :
 # Rebuild and make available for the currently running kernel:
-dkms build -m %{modulename} -v %{version} -q || :
-dkms install -m %{modulename} -v %{version} -q --force || :
+dkms build -m logitech-trueforce-linux-driver -v %{version} -q || :
+dkms install -m logitech-trueforce-linux-driver -v %{version} -q --force || :
 
 %preun
-dkms remove -m %{modulename} -v %{version} -q --all --rpm_safe_upgrade || :
+dkms remove -m logitech-trueforce-linux-driver -v %{version} -q --all --rpm_safe_upgrade || :
 
 %files
-%{_usrsrc}/%{modulename}-%{version}
+%{_usrsrc}/logitech-trueforce-linux-driver-%{version}
 
 %changelog
 * Sun May 03 2026 Luan V. <luanv.oliveira@outlook.com> - 1.0^20260502git.7296717-2

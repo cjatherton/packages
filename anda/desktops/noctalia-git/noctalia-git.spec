@@ -2,9 +2,9 @@
 
 %global ver 5.0.0
 
-%global commit          91a26de7cd533b0103cc5340486551d2b5eccd6e
+%global commit          01bfb1bb221594e126d0a0b78fee13456182b026
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
-%global commitdate      20260722
+%global commitdate      20260801
 
 Name:   	noctalia-git
 Version:	%{ver}^%{commitdate}git.%{shortcommit}
@@ -16,6 +16,7 @@ URL:		https://github.com/noctalia-dev/noctalia
 Source0:	https://github.com/noctalia-dev/noctalia/archive/%{commit}/noctalia-%{commit}.tar.gz
 
 BuildRequires:  meson
+BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:  git
 BuildRequires:  desktop-file-utils
@@ -44,6 +45,11 @@ BuildRequires:  pkgconfig(polkit-gobject-1)
 BuildRequires:  pkgconfig(wayland-client)
 BuildRequires:  pkgconfig(wayland-protocols)
 BuildRequires:  pkgconfig(xkbcommon)
+BuildRequires:  pkgconfig(libsecret-1)
+BuildRequires:  pkgconfig(libsodium)
+BuildRequires:  pkgconfig(libjxl)
+BuildRequires:  pkgconfig(libical)
+BuildRequires:  pkgconfig(sndfile)
 
 Provides:       desktop-notification-daemon
 Provides:       PolicyKit-authentication-agent

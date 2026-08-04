@@ -1,5 +1,5 @@
-%global commit 29581f64541daaedecf511783ffb83063e1c601c
-%global commit_date 20260801
+%global commit 8fbc8a30a69ce4d86cdf2a5055d52c4999b1b03e
+%global commit_date 20260804
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 %define debug_package %nil

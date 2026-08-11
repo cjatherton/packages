@@ -1,7 +1,7 @@
-%global metainfo_commit d4a62dd767ef0565cf81f05ebf5a9a17d0d37386
+%global metainfo_commit 5f0d41c8fdb66848c8416c49a74eb14925ac7234
 
 Name:			proton-vpn-gtk-app
-Version:		4.17.1
+Version:		4.17.2
 Release:		1%{?dist}
 Summary:		Official ProtonVPN Linux app
 License:		GPL-3.0-only
@@ -23,6 +23,7 @@ BuildRequires:  gtk3
 BuildRequires:  libnotify
 BuildRequires:  python3-proton-vpn-api-core
 BuildRequires:  librsvg2
+BuildRequires:  gettext
 
 Requires:       gtk3
 Requires:       libnotify

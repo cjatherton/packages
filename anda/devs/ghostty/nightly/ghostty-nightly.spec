@@ -1,4 +1,4 @@
-%global commit 44f06d4e4fd098aa4b5627e0c2b2d6e704834117
+%global commit b0b9fbc8d5b0faecdd79da2303811b42bd0afc67
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 %global fulldate 2026-08-11
 %global commit_date %(echo %{fulldate} | sed 's/-//g')
@@ -28,7 +28,7 @@ BuildRequires:  ncurses
 BuildRequires:  ncurses-devel
 BuildRequires:  pandoc-cli
 BuildRequires:  systemd-rpm-macros
-BuildRequires:  zig0.15
+BuildRequires:  zig
 BuildRequires:  zig-rpm-macros
 BuildRequires:  pkgconfig(blueprint-compiler)
 BuildRequires:  pkgconfig(bzip2)
@@ -198,6 +198,7 @@ This package contains the libraries and header files that are needed for develop
 /usr/bin/minisign -V -m %{SOURCE0} -x %{SOURCE1} -P %{public_key}
 %autosetup -n %{base_name}-%{ver}-main-+%{shortcommit}
 
+%zig_prep
 ZIG_GLOBAL_CACHE_DIR="%{_zig_cache_dir}" ./nix/build-support/fetch-zig-cache.sh
 
 %build

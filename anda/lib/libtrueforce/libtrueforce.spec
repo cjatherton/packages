@@ -1,6 +1,6 @@
-%global commit 4190da026a2fb15123a6a6577ed41e3bb721fc21
+%global commit 1f9e926283c27eccc2fb8018f00a63d449e2636e
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global commitdate 20260812
+%global commitdate 20260819
 %global debug_package %{nil}
 
 Name:           libtrueforce
@@ -47,7 +47,7 @@ mv ./logitech-trueforce-linux-driver-%{commit}/docs/TRUEFORCE_PROTOCOL.md .
 rm -rf ./logitech-trueforce-linux-driver-%{commit}
 
 %build
-%make_build PREFIX=%{_prefix} LIBDIR=%{_libdir} CFLAGS="%{build_cflags}"
+%make_build PREFIX=%{_prefix} LIBDIR=%{_libdir} CFLAGS="%(echo %{build_cflags} | sed 's/-fPIE//g') -fPIC"
 
 %install
 %make_install PREFIX=%{_prefix} LIBDIR=%{_libdir}

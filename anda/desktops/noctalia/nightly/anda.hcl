@@ -1,6 +1,6 @@
 project pkg {
   rpm {
-    spec = "porffor.spec"
+    spec = "noctalia-nightly.spec"
   }
   labels {
     nightly = 1

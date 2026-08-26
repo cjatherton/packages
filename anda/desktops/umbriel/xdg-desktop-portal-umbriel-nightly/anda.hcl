@@ -1,6 +1,6 @@
 project pkg {
   rpm {
-    spec = "porffor.spec"
+    spec = "xdg-desktop-portal-umbriel-nightly.spec"
   }
   labels {
     nightly = 1

@@ -1,5 +1,5 @@
-%global commit 48c8d66585533913d525d446abf9f2fb483dc199
-%global commit_date 20260902
+%global commit 9f39d6000265f5fc4a05e5d95ffa2c97d4b9eb2a
+%global commit_date 20260903
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           rpinters
@@ -39,6 +39,7 @@ BuildRequires: pkgconfig(gsettings-desktop-schemas)
 %license debian/copyright
 %{_datadir}/rpcc/ui/%{name}.ui
 %{_libdir}/rpcc/librpcc_rpinters.so
+%{_datadir}/polkit-1/rules.d/10-rpinters.rules
 
 %changelog
 * Fri Aug 08 2025 Owen Zimmerman <owen@fyralabs.com>

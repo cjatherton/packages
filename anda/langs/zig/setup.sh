@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-version=0.18.0-dev.35+5e754304d
+version="$ZIG_VERSION"
 
 mirrors=()
 

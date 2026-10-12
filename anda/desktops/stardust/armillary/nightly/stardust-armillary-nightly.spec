@@ -1,5 +1,5 @@
-%global commit 58e3803c74da4d6cb8a1f491ead764ea73c3ec7d
-%global commit_date 20260926
+%global commit b94d405024b339e04f04099d0c4ee9a746beb035
+%global commit_date 20261011
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 # Exclude input files from mangling
 %global __brp_mangle_shebangs_exclude_from ^/usr/src/.*$

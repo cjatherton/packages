@@ -36,6 +36,7 @@ BuildRequires:  libedit(x86-64)
 BuildRequires:  cargo-about
 BuildRequires:  cargo-rpm-macros >= 24
 BuildRequires:  anda-srpm-macros
+BuildRequires:  terra-appstream-helper
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
 BuildRequires:  gettext-envsubst

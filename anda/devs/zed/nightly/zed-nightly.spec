@@ -1,6 +1,6 @@
-%global commit 9e84b066b55bc3609a30dd965075c12255b38b45
+%global commit ec86047d67acd6fddd81392f44ed6ebcc6e7f531
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global commit_date 20261023
+%global commit_date 20261027
 %global ver 1.27.0
 
 %bcond_with check
@@ -119,7 +119,7 @@ export ZED_UPDATE_EXPLANATION="Run dnf up to update Zed Nightly from Terra."
 echo "nightly" > crates/zed/RELEASE_CHANNEL
 
 %cargo_build -- --package zed --package cli
-ALLOW_MISSING_LICENSES=1 script/generate-licenses
+ALLOW_MISSING_LICENSES=1 CARGO_NET_OFFLINE=false script/generate-licenses
 %endif
 
 %install

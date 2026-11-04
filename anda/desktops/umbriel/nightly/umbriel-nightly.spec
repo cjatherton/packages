@@ -1,8 +1,8 @@
 %global debug_package   %{nil}
 
-%global commit          8c6e5c9d092bc30aa38a4a16d72836e1c3d339bb
+%global commit          63327b588974b6aedaa19feb8344a03af0c676af
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
-%global commitdate      20261027
+%global commitdate      20261103
 
 Name:   	umbriel-nightly
 Version:	0^%{commitdate}git.%{shortcommit}
@@ -30,6 +30,8 @@ BuildRequires:  pkgconfig(xkbcommon)
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(pangocairo)
 BuildRequires:  pkgconfig(libdisplay-info)
+BuildRequires:  pkgconfig(libeis-1.0)
+BuildRequires:  pkgconfig(libei-1.0)
 
 Requires:       xwayland-satellite
 Requires:       xdg-desktop-portal-umbriel-nightly

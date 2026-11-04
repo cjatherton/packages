@@ -1,8 +1,8 @@
 %global debug_package   %{nil}
 
-%global commit          e69d6f72122a99aa3668e182a4df8755ada81c17
+%global commit          79f087598d596ae8a81dff1036d0ab3b5c446584
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
-%global commitdate      20261025
+%global commitdate      20261102
 
 Name:   	xdg-desktop-portal-umbriel-nightly
 Version:	0^%{commitdate}git.%{shortcommit}
@@ -27,6 +27,7 @@ BuildRequires:  pkgconfig(tomlplusplus)
 BuildRequires:  pkgconfig(gbm)
 BuildRequires:  pkgconfig(nlohmann_json)
 BuildRequires:  pkgconfig(gtk4)
+BuildRequires:  pkgconfig(libei-1.0)
 BuildRequires:  systemd-rpm-macros
 
 Packager:       Cypress Reed <cypress@fyralabs.com>

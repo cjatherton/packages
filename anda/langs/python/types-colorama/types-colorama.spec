@@ -1,5 +1,5 @@
-%global commit e4a2f2272550112da39dbbad67b0b6ca778586db
-%global commit_date 20261025
+%global commit 376b537bcd376a6a7aec0da5ab6a1787d802313a
+%global commit_date 20261104
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 %global pypi_name types-colorama
@@ -42,7 +42,7 @@ install -Dm755 stubs/colorama/colorama/*.pyi          %{buildroot}%{python3_site
 install -Dm755 stubs/colorama/METADATA.toml         %{buildroot}%{python3_sitelib}/colorama-stubs/METADATA.toml
 
 %files -n python3-%{pypi_name}
-%doc README.md MAINTAINERS.md CONTRIBUTING.md
+%doc README.md CONTRIBUTING.md
 %license LICENSE
 %python3_sitelib/colorama-stubs/METADATA.toml
 %{python3_sitelib}/colorama-stubs/*.pyi

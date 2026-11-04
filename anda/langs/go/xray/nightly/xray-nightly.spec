@@ -1,7 +1,7 @@
-%global commit  229799a7a37a7477560630ef24aac0a1d634f6a7
+%global commit  858c44f410ed2a0d091a1ba774fc3ab12b1718db
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global ver v26.10.21
-%global commit_date 20261028
+%global ver v26.10.31
+%global commit_date 20261104
 
 %global goipath         github.com/XTLS/Xray-core
 Version:                %{ver}^%{commit_date}git.%{shortcommit}

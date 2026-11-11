@@ -1,6 +1,6 @@
 %global toolchain clang
-%global commit 0c135ce2f36fdd3467d5a58daa92283810705a51
-%global commit_date 20261021
+%global commit a97a0ae8e296009aee482dff11b150528098a9b7
+%global commit_date 20261110
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           porffor-nightly

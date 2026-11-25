@@ -4,11 +4,11 @@
 %global proc_macros_commit 7306a90996eaa89284f3e271dbb04152e3eedf96
 
 Name:           taidan
-Version:        1.0.3
-Release:        2%{?dist}
+Version:        1.0.5
+Release:        1%{?dist}
 Summary:        Out-Of-Box-Experience (OOBE) and Welcome App
 # https://scancode-licensedb.aboutcode.org/unsplash
-SourceLicense:  GPL-3.0-or-later AND GPL-2.0-or-later AND LicenseRef-scancode-unsplash
+SourceLicense:  GPL-3.0-or-later AND GPL-2.0-or-later AND MIT AND LicenseRef-scancode-unsplash
 License:        (%{sourcelicense}) AND (BSD-3-Clause OR MIT OR Apache-2.0) AND Apache-2.0 AND MIT AND (MIT OR Apache-2.0 OR Zlib) AND (0BSD OR MIT OR Apache-2.0) AND BSD-2-Clause AND Zlib AND MIT AND (Apache-2.0 OR GPL-2.0-only) AND ((MIT OR Apache-2.0) AND Unicode-3.0) AND (Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT) AND GPL-3.0-or-later AND Apache-2.0 AND Unicode-3.0 AND (BSD-2-Clause OR Apache-2.0 OR MIT) AND (CC0-1.0 OR Apache-2.0) AND (BSD-3-Clause OR Apache-2.0) AND BSL-1.0 AND ISC AND (GPL-3.0-only OR LicenseRef-Slint-Royalty-free-2.0 OR LicenseRef-Slint-Software-3.0) AND BSD-3-Clause AND (MIT OR Apache-2.0 OR LGPL-2.1-or-later) AND (Unlicense OR MIT)
 URL:            https://github.com/Ultramarine-Linux/taidan
 Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
@@ -109,6 +109,7 @@ install -d %buildroot%{_sharedstatedir}/taidan
 %{_datadir}/taidan/avatars/
 %{_datadir}/taidan/po/
 %{_datadir}/taidan/session-config/
+%{_datadir}/taidan/wallpaper.png
 
 %changelog
 * Sun Nov 15 2026 Cypress Reed <cypress@fyralabs.com> - 1.0.3-2

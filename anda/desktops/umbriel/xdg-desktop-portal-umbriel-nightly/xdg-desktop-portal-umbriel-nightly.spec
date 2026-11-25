@@ -1,8 +1,8 @@
 %global debug_package   %{nil}
 
-%global commit          62030bb90784229f6fdc8b15bbb03bcd28867488
+%global commit          426d3d433d5a738d4abf01474c34487f884396ae
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
-%global commitdate      20261119
+%global commitdate      20261125
 
 Name:   	xdg-desktop-portal-umbriel-nightly
 Version:	0^%{commitdate}git.%{shortcommit}
@@ -28,6 +28,10 @@ BuildRequires:  pkgconfig(gbm)
 BuildRequires:  pkgconfig(nlohmann_json)
 BuildRequires:  pkgconfig(gtk4)
 BuildRequires:  pkgconfig(libei-1.0)
+BuildRequires:  pkgconfig(epoxy)
+BuildRequires:  pkgconfig(xkbcommon)
+BuildRequires:  dbus-daemon
+BuildRequires:  stb_image_resize2-devel
 BuildRequires:  systemd-rpm-macros
 
 Packager:       Cypress Reed <cypress@fyralabs.com>
@@ -67,6 +71,7 @@ sed -i "s/'unknown'/'%{shortcommit}'/g" meson.build
 %{_libexecdir}/xdg-desktop-portal-umbriel
 %{_datadir}/dbus-1/services/org.freedesktop.impl.portal.desktop.umbriel.service
 %{_datadir}/xdg-desktop-portal/portals/umbriel.portal
+%{_datadir}/xdg-desktop-portal-umbriel/assets/fonts/
 %config %{_datadir}/xdg-desktop-portal/umbriel-portals.conf
 
 %changelog
